@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "gilroy";
+  src: url("/fonts/Gilroy-Black.woff2");
+}
+@font-face {
+  font-family: "gilroy-bold";
+  src: url("/fonts/Gilroy-Bold.woff2");
+}
+@font-face {
+  font-family: "gilroy-exBold";
+  src: url("/fonts/Gilroy-Extrabold.woff2");
+}
+@font-face {
+  font-family: "gilroy-reg";
+  src: url("/fonts/Gilroy-Regular.woff2");
+}
+@font-face {
+  font-family: "gilroy-light";
+  src: url("/fonts/Gilroy-Light.woff2");
+}
+@font-face {
+  font-family: "gilroy-semi";
+  src: url("/fonts/Gilroy-Semibold.woff2");
+}
+
+
+@theme {
+  --font-gilroy: "gilroy", sans-serif;
+  --font-gilroy-exBold: "gilroy-exBold", sans-serif;
+  --font-gilroy-semi: "gilroy-semi", sans-serif;
+  --font-gilroy-light: "gilroy-light", sans-serif;
+  --font-gilroy-reg: "gilroy-reg", sans-serif;
+  --font-gilroy-bold: "gilroy-bold", sans-serif;
+  --color-yellow: #fff9cb;
+  --color-pink: #ffb0c4;
+  --breakpoint-sm: 40rem;
+  --breakpoint-xs: 20rem;
+  --breakpoint-3xl: 120rem;
+}
+
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+  font-family: gilroy-reg;
+  background-color: black;
+  color: white;
+}
+
+main {
+  background: linear-gradient(
+    223.17deg,
+    rgb(28, 24, 41) 0%,
+    rgb(27, 24, 40) 8.61%,
+    rgb(25, 23, 36) 17.21%,
+    rgb(22, 21, 32) 25.82%,
+    rgb(20, 19, 28) 34.42%,
+    rgb(18, 18, 24) 43.03%,
+    rgb(17, 17, 23) 51.63%
+  );
+}
+
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .col-center {
+    @apply flex flex-col justify-center items-center;
+  }
+  .abs-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+    .button {
+        @apply rounded-full bg-white w-fit font-gilroy-bold px-5 md:px-7 py-4 text-lg;
+      }
+  .full {
+    @apply w-full h-screen
+  }
+
+
+}
+.glass-card {
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  background-color: #ffffff0f;
+  box-shadow: 0 4px 8.100000000000001px rgba(0, 0, 0, 0.135);
+}
+.glass-card-2 {
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  background-color: #40e64866;
+  box-shadow: 0 4px 8.100000000000001px rgba(0, 0, 0, 0.135);
+}
+
+
+.crsr.invert {
+  border-color: white;
+  mix-blend-mode: difference;
+}
+
+
