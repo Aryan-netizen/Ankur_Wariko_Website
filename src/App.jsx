@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useCursor } from "./context/CursorContext";
+import Routes from "./routes/Router";
 
 const App = () => {
   const { mouseRef, startCursorRotation } = useCursor();
@@ -29,7 +30,8 @@ const App = () => {
       ></div>
 
       <Nav />
-      <Home/>
+      <Routes/>
+
     </div>
   );
 };

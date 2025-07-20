@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React, { useRef } from 'react'
 import { useCursor } from '../context/CursorContext';
+import { Link, Outlet } from 'react-router-dom';
 
 
 const Nav = () => {
@@ -34,12 +35,13 @@ const Nav = () => {
   return (
     <>
         <div ref={navref} className='flex justify-end gap-8 p-5 text-2xl w-full fixed z-20 glass-card px-20'>
-            <h1 onMouseEnter={enter} onMouseLeave={leave} >Home</h1>
-            <h1 onMouseEnter={enter} onMouseLeave={leave} >Courses</h1>
-            <h1 onMouseEnter={enter} onMouseLeave={leave} >Books</h1>
-            <h1 onMouseEnter={enter} onMouseLeave={leave} >About</h1>
-            <h1 onMouseEnter={enter} onMouseLeave={leave} >Login</h1>
+            <Link to="/"><h1 onMouseEnter={enter} onMouseLeave={leave} >Home</h1></Link>
+            <Link to="/courses"><h1 onMouseEnter={enter} onMouseLeave={leave} >Courses</h1></Link>
+            <Link to="/"><h1 onMouseEnter={enter} onMouseLeave={leave} >Books</h1></Link>
+            <Link to="/"><h1 onMouseEnter={enter} onMouseLeave={leave} >About</h1></Link>
+            <Link to="/"><h1 onMouseEnter={enter} onMouseLeave={leave} >Login</h1></Link>
         </div>
+        <Outlet />
     </>
   )
 }
