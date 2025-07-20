@@ -12,7 +12,7 @@ const Become = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: contain.current,
-        start: "top 100%",
+        start: "top 70%",
         end: "+=500",
         scrub: true,
         markers: true,
@@ -40,22 +40,22 @@ const Become = () => {
   }, []);
 
   return (
-    <div ref={contain}>
+    <div ref={contain} className="col-center">
       <h1
         ref={text1}
-        className="text-[5vh] md:text-[10vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
+        className="text-[5vh] md:text-[10vh] whitespace-nowrap font-gilroy-exBold p-4 px-8 "
       >
-        I’m not here to <span> sell you dreams.</span>
+        I’m not here to <span className="text-red-500"> sell you dreams.</span>
       </h1>
       <h1
         ref={text2}
         className="text-[5vh] md:text-[10vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
       >
-        I’m here to help you <span>build your own.</span>
+        I’m here to help you <span className="text-amber-300">build your own.</span>
       </h1>
       <h1
         ref={text3}
-        className="text-[12vh] md:text-[25vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
+        className="text-[12vh] md:text-[25vh] whitespace-nowrap font-gilroy-exBold p-4 px-8 text-emerald-500"
       >
         DREAM LIFE
       </h1>

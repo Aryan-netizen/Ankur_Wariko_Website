@@ -51,8 +51,8 @@ const Hero = () => {
 
     tl.fromTo(
       TextRef.current,
-      { opacity: 0, y: 400, scale: 2 },
-      { opacity: 1, y: -200, scale: 1, duration: 1.2, ease: "power3.out" }
+      { opacity: 0, scale: 2 },
+      { opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" }
     )
       .fromTo(
         ImageRef.current,

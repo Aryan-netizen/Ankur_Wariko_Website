@@ -3,16 +3,19 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useCursor } from "../context/CursorContext";
+import { useNavigate } from "react-router-dom";
+import { useFlashNavigate } from "./flash/useFlashNavigate";
 gsap.registerPlugin(ScrollTrigger);
 
 const LifeMeaning = () => {
   const { mouseRef, setCursorSpeed } = useCursor();
-
+  const [flashNavigate, flash] = useFlashNavigate();
   const container2 = useRef();
   const video = useRef();
   const h2 = useRef();
   const p = useRef();
   const button = useRef();
+  let navigate = useNavigate();
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -35,7 +38,7 @@ const LifeMeaning = () => {
 
   const enter = () => {
     gsap.to(button.current, {
-      scale: 2,
+      scale: 1.2,
       duration: 0.5,
     });
     gsap.to(mouseRef.current, {
@@ -55,6 +58,10 @@ const LifeMeaning = () => {
     });
     setCursorSpeed(1);
   };
+  const clicked = ()=>{
+    flashNavigate("/courses")
+
+  }
   return (
     <div
       ref={container2}
@@ -87,10 +94,12 @@ const LifeMeaning = () => {
         ref={button}
         onMouseEnter={enter}
         onMouseLeave={leave}
+        onClick={clicked}
         className="absolute z-40 left-4 top-[80%] md:left-20 w-[80%] md:w-[30%] text-base md:text-2xl py-3 px-6 font-gilroy-semi button"
       >
         Explore courses Now
       </button>
+      {flash}
     </div>
   );
 };
