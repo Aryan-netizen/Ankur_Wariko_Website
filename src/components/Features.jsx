@@ -2,8 +2,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useCursor } from "../context/CursorContext";
 gsap.registerPlugin(ScrollTrigger);
 const Features = () => {
+    const { mouseRef, setCursorSpeed } = useCursor();
   const container2 = useRef();
   const video = useRef();
   const h1 = useRef();
