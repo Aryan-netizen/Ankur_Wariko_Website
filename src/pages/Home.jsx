@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(SplitText);
 
 const Home = () => {
-    const { mouseRef,setCursorSpeed  } = useCursor();
+  const { mouseRef, setCursorSpeed } = useCursor();
   const TextRef = useRef();
   const ImageRef = useRef();
   const containerRef = useRef();
@@ -19,11 +19,12 @@ const Home = () => {
   useGSAP(() => {
     const split1 = new SplitText(text1.current, { type: "words" });
     const split2 = new SplitText(text2.current, { type: "words" });
-    containerRef.current = gsap.to(containerRef.current, {
-      scale:1.1,
+    gsap.to(containerRef.current, {
+      scale: 1.1,
       repeat: -1,
+      yoyo:true,
       ease: "linear",
-      duration: 60,
+      duration: 30,
     });
     // Initial animation timeline
     const tl = gsap.timeline({
@@ -34,12 +35,12 @@ const Home = () => {
             scrollTrigger: {
               trigger: containerRef.current,
               start: "top top",
-              end: "+=500",
+              end: "+=800",
               scrub: true,
               pin: true,
               pinSpacing: false,
               markers: true,
-              snap: 0.1
+              snap: 0.1,
             },
           })
           .to(containerRef.current, {
@@ -57,8 +58,8 @@ const Home = () => {
     )
       .fromTo(
         ImageRef.current,
-        { y: 200, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1,delay:2, ease: "power1.out" },
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.4, delay: 2, ease: "power1.out" },
         "<"
       )
       .fromTo(
@@ -81,26 +82,26 @@ const Home = () => {
         ease: "power2.out",
       });
   }, []);
-  
-  const change = ()=>{
-    gsap.to(mouseRef.current,{
-        scale:2,
-        duration:2,
-    })
-    setCursorSpeed(3)
-  }
-  const ret = ()=>{
-    gsap.to(mouseRef.current,{
-        scale:1,
-        duration:2,
-    })
-    setCursorSpeed(1)
-  }
+
+  const change = () => {
+    gsap.to(mouseRef.current, {
+      scale: 2,
+      duration: 2,
+    });
+    setCursorSpeed(3);
+  };
+  const ret = () => {
+    gsap.to(mouseRef.current, {
+      scale: 1,
+      duration: 2,
+    });
+    setCursorSpeed(1);
+  };
 
   return (
     <div ref={containerRef} className="relative min-h-screen overflow-hidden">
       <img
-        src="/images/bg-ankur.png"
+        src="/images/bg-ankur.webp"
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover scale-350 z-0"
       />
@@ -113,9 +114,8 @@ const Home = () => {
           ANKUR WARIKO
         </h1>
         <img
-        
           ref={ImageRef}
-          src="/images/hero-ankur.png"
+          src="/images/hero-ankur.webp"
           alt=""
           className="absolute top-0 left-0 w-full h-full scale-100 object-cover z-10"
         />
@@ -124,14 +124,20 @@ const Home = () => {
       <div className="absolute h-screen w-full z-20 top-20">
         <div className="flex justify-evenly flex-col px-20 h-full ">
           <div>
-            <h1 onMouseEnter={change} onMouseLeave={ret} ref={text1} className="text-7xl w-[30%] font-gilroy-reg  ">
+            <h1
+              onMouseEnter={change}
+              onMouseLeave={ret}
+              ref={text1}
+              className="text-7xl w-[30%] font-gilroy-reg  "
+            >
               Build a life you're proud of
             </h1>
           </div>
-          <div className="flex justify-end" >
+          <div className="flex justify-end">
             <h1
               ref={text2}
-              onMouseEnter={change} onMouseLeave={ret}
+              onMouseEnter={change}
+              onMouseLeave={ret}
               className="text-5xl w-[35%] font-gilroy-reg text-right"
             >
               I’m <br /> Ankur Warikoo

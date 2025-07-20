@@ -31,13 +31,6 @@ const Features = () => {
             y:200,
             duration:0.3
         })
-        // .from(video.current,{
-        //     opacity:0.4,
-        //     scale:2,
-        //     delay:3,    
-        //     duration:0.9,
-        //     ease:'power2.out'
-        // })
         gsap.to(container2.current, {
     scale: 0.8,
     ease: "linear",
@@ -67,8 +60,7 @@ const Features = () => {
         ref={video}
         className="w-full h-screen scale-120 opacity-60"
         src="/videos/ankur4.mp4"
-        onMouseEnter={enter}
-        onMouseLeave={leave}
+        onMouseEnter={enter} onMouseLeave={leave}
         muted
         autoPlay
         loop
@@ -84,7 +76,6 @@ const Features = () => {
         Through my books, courses, and content, I help you take control of your
         time, money, and decisions.
       </p>
-
     </div>
   );
 };

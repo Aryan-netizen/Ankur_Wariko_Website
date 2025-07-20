@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { useCursor } from "./context/CursorContext";
 import Become from "./components/Become";
 import HalfClock from "./components/HalfClock";
+import LifeMeaning from "./components/LifeMeaning";
 
 const App = () => {
   const { mouseRef, startCursorRotation } = useCursor();
@@ -28,7 +29,7 @@ const App = () => {
     <div className="relative cursor-none" onMouseMove={handleMouse}>
       <div
         ref={mouseRef}
-        className="crsr w-[50px] h-[50px] border-8 border-double rounded-full fixed z-[999] pointer-events-none"
+        className="crsr w-[50px] h-[50px] border-8 border-dotted rounded-full fixed z-[999] pointer-events-none"
       ></div>
 
       <Nav />
@@ -44,7 +45,7 @@ const App = () => {
           <Features />
         </section>
         <section className="h-screen snap-start">
-          <HalfClock />
+          <LifeMeaning />
         </section>
       </div>
     </div>

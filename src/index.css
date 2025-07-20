@@ -73,7 +73,7 @@ main {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
     .button {
-        @apply rounded-full bg-white w-fit font-gilroy-bold px-5 md:px-7 py-4 text-lg;
+        @apply rounded-full bg-white text-black w-fit font-gilroy-bold px-5 md:px-7 py-4 text-lg;
       }
   .full {
     @apply w-full h-screen
@@ -84,13 +84,7 @@ main {
 .glass-card {
   backdrop-filter: blur(13px);
   -webkit-backdrop-filter: blur(13px);
-  background-color: #ffffff0f;
-  box-shadow: 0 4px 8.100000000000001px rgba(0, 0, 0, 0.135);
-}
-.glass-card-2 {
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
-  background-color: #40e64866;
+  background-color: #ffffff4a;
   box-shadow: 0 4px 8.100000000000001px rgba(0, 0, 0, 0.135);
 }
 
