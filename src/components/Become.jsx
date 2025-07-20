@@ -12,7 +12,7 @@ const Become = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: contain.current,
-        start: "top 60%",
+        start: "top 100%",
         end: "+=500",
         scrub: true,
         markers: true,
