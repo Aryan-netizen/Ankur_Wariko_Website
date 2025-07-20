@@ -3,59 +3,62 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 
 const Become = () => {
-    const text1=useRef()
-    const text2=useRef()
-    const text3=useRef()
-    const contain=useRef()
-     
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: contain.current,
-              start: "top 60%",
-              end: "+=500",
-              scrub: true,
-              markers: true,
-            },
-          })
-  tl.from(text1.current, {
-    y: -40,
-    opacity:0,
-    duration: 2,
-    ease: "power3.Out",
-  });
+  const text1 = useRef();
+  const text2 = useRef();
+  const text3 = useRef();
+  const contain = useRef();
 
-  tl.from(text2.current, {
-     y: -40,
-    opacity:0,
-    duration: 2,
-    ease: "power3.out",
-  });
-  tl.from(text3.current, {
-     y: -40,
-    opacity:0,
-    duration: 2,
-    ease: "power3.out",
-  });
-}, []);
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: contain.current,
+        start: "top 60%",
+        end: "+=500",
+        scrub: true,
+        markers: true,
+      },
+    });
+    tl.from(text1.current, {
+      y: -40,
+      opacity: 0,
+      duration: 2,
+      ease: "power3.Out",
+    });
+
+    tl.from(text2.current, {
+      y: -40,
+      opacity: 0,
+      duration: 2,
+      ease: "power3.out",
+    });
+    tl.from(text3.current, {
+      y: -40,
+      opacity: 0,
+      duration: 2,
+      ease: "power3.out",
+    });
+  }, []);
 
   return (
     <div ref={contain}>
-      <div className="bg-emerald-700 w-fit">
-        <h1 ref={text1} className="text-[13vh] whitespace-nowrap font-gilroy-exBold p-4 px-30">
-          I’m not here to <span> sell you dreams.</span>
-        </h1>
-      </div>
-      <div className="bg-amber-800 w-fit">
-        <h1 ref={text2} className="text-[12vh] whitespace-nowrap font-gilroy-exBold p-4 px-25">
-          I’m here to help you <span>build your own.</span> 
-        </h1>
-      </div>
-      <div className="bg-blue-800 w-fit">
-        <h1 ref={text3} className="text-[30vh] whitespace-nowrap font-gilroy-exBold p-4 px-50 ">
-          DREAM LIFE
-        </h1>
-      </div>
+      <h1
+        ref={text1}
+        className="text-[5vh] md:text-[10vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
+      >
+        I’m not here to <span> sell you dreams.</span>
+      </h1>
+      <h1
+        ref={text2}
+        className="text-[5vh] md:text-[10vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
+      >
+        I’m here to help you <span>build your own.</span>
+      </h1>
+      <h1
+        ref={text3}
+        className="text-[12vh] md:text-[25vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
+      >
+        DREAM LIFE
+      </h1>
     </div>
   );
 };
