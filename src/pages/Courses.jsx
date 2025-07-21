@@ -2,6 +2,7 @@ import React from "react";
 import HalfClock from "../components/HalfClock";
 import Motivation from "../components/Motivation";
 import CoursesCard from "../components/CoursesCard";
+import Card from "../components/Card";
 
 const Courses = () => {
   return (
@@ -13,9 +14,10 @@ const Courses = () => {
         <section className="h-[200vh]">
             <Motivation/>
         </section>
-        {/* <section className="h-screen">
+        <section className="h[400vh]">
             <CoursesCard/>
-        </section> */}
+            {/* <Card/> */}
+        </section>
       </div>
     </div>
   );

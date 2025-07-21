@@ -46,6 +46,42 @@ const Motivation = () => {
     });
   }, []);
 
+  const markerRefs = useRef([]);
+  
+  useGSAP(() => {
+    gsap.from(markerRefs.current, {
+      opacity: 0,
+      scale: 0.5,
+      rotate:90,
+      stagger: 0.04,
+      duration: 1,
+      yoyo:true,
+      repeat:-1,
+      ease: "elastic.out",
+    })
+  });
+  const markers = Array.from({ length: 60 }, (_, i) => {
+    const angle = (i * 6 - 90) * (Math.PI / 180);
+    const radius = 120;
+    const x1 = 150 + (radius - (i % 5 === 0 ? 0 : 4)) * Math.cos(angle);
+    const y1 = 150 + (radius - (i % 5 === 0 ? 0 : 4)) * Math.sin(angle);
+    const x2 = 150 + (radius - (i % 5 === 0 ? 20 : 10)) * Math.cos(angle);
+    const y2 = 150 + (radius - (i % 5 === 0 ? 20 : 10)) * Math.sin(angle);
+    return (
+      <line
+        key={i}
+        ref={(el) => (markerRefs.current[i] = el)}
+        x1={x1}
+        y1={y1}
+        x2={x2}
+        y2={y2}
+        stroke="white"
+        strokeWidth="0.5"
+      />
+    );
+  });
+
+
   return (
     <div ref={contain} className="col-center">
       <h1
@@ -56,7 +92,7 @@ const Motivation = () => {
       </h1>
       <h1
         ref={text2}
-        className="text-[5vh] md:text-[10vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
+        className="text-[5vh] md:text-[8vh] whitespace-nowrap font-gilroy-exBold p-4 px-8"
       >
         Because the next hour will pass{" "}
         <span className="text-amber-300">either way.</span>
@@ -87,6 +123,14 @@ const Motivation = () => {
       >
         Learn the skills. Build the Life that You Want.
       </h1>
+      <svg
+        width="1800"
+        height="300"
+        viewBox="0 10 300 100"
+        className=""
+      >
+        {markers}
+      </svg>
     </div>
   );
 };

@@ -60,8 +60,14 @@ useGSAP(()=>{
 
   return (
     <div ref={contain} className="flex justify-center items-center h-screen bg-black relative pb-10">
-      <svg width="1800" height="700" viewBox="0 0 300 150">
-        {markers}
+      <video
+        className="w-full h-full object-cover transition-all duration-500 absolute z-0"
+        src="/videos/Homepage.mp4"
+        muted
+        autoPlay
+        loop
+      ></video>
+      <svg width="1800" height="700" viewBox="0 0 300 150" className="absolute z-2">
         {/* Needles */}
         <line ref={needle2Ref} x1="150" y1="150" x2="150" y2="-80" stroke="white" strokeWidth="0.5" />
         <line ref={needle1Ref} x1="150" y1="150" x2="150" y2="-80" stroke="white" strokeWidth="0.5" />
