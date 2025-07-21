@@ -51,6 +51,9 @@ const CoursesCard = () => {
   useEffect(() => {
   setCardsData(data);
 }, []);
+  
+
+
 
 return (
   <div className="h-full w-full overflow-hidden grid grid-cols-3 p-20 gap-10">

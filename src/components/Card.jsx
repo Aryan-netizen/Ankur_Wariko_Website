@@ -1,7 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const Card = ({data }) => {
     const card=useRef()
@@ -10,7 +12,7 @@ const Card = ({data }) => {
     const p=useRef()
     const img=useRef()
     useGSAP(()=>{
-        gsap.set([h1.current,p.current,button.current],{
+        gsap.set([p.current,button.current],{
             opacity:0,
             y:0,
         })
@@ -26,10 +28,6 @@ const Card = ({data }) => {
             tl.to(card.current,{
                 scale:1.1,
                 duration:0.2,
-            }).to(h1.current,{
-                opacity:1,
-                duration:0.1,
-                y:-2,
             }).to(p.current,{
                 opacity:1,
                 duration:0.1,
@@ -47,10 +45,6 @@ const Card = ({data }) => {
             tl.to(card.current,{
                 scale:1,
                 duration:0.2,
-            }).to(h1.current,{
-                opacity:0,
-                duration:0.1,
-                y:-2,
             }).to(p.current,{
                 opacity:0,
                 duration:0.1,
