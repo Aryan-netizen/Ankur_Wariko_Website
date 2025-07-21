@@ -55,7 +55,8 @@ const Become = () => {
       </h1>
       <h1
         ref={text3}
-        className="text-[12vh] md:text-[25vh] whitespace-nowrap font-gilroy-exBold p-4 px-8 text-emerald-500"
+        className="text-[12vh] md:text-[25vh] whitespace-nowrap font-gilroy-exBold p-4 px-8 text-emerald-500 
+        hover:text-yellow-400"
       >
         DREAM LIFE
       </h1>

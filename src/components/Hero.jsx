@@ -96,7 +96,7 @@ const Hero = () => {
       <img
         src="/images/bg-ankur.webp"
         alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover scale-350 z-0"
+        className="absolute top-0 left-[-5vh] w-full h-full object-cover scale-200 z-0"
       />
 
       <div className="relative h-screen w-full flex items-center justify-center">
