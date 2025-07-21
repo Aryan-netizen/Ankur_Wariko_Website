@@ -11,9 +11,9 @@ const Courses = () => {
         <section className="h-screen">
           <HalfClock />
         </section>
-        <section className="h-[200vh]">
+        {/* <section className="h-[200vh]">
             <Motivation/>
-        </section>
+        </section> */}
         <section className="h[400vh]">
             <CoursesCard/>
             {/* <Card/> */}

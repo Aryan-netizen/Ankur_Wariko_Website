@@ -56,10 +56,13 @@ const CoursesCard = () => {
 
 
 return (
+  <div className="h-full w-full overflow-hidden">
+    <h1 className="w-full text-center text-8xl">Courses</h1>
   <div className="h-full w-full overflow-hidden grid grid-cols-3 p-20 gap-10">
     {cardsData.map((c, i) => (
       <Card data={c} key={i} />
     ))}
+  </div>
   </div>
 );
 };

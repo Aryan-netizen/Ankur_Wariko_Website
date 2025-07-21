@@ -8,31 +8,30 @@ const HalfClock = () => {
   const contain = useRef(null);
   const markerRefs = useRef([]);
 
-useGSAP(()=>{
-  gsap.from(markerRefs.current, {
+  useGSAP(() => {
+    gsap.from(markerRefs.current, {
       opacity: 0,
       scale: 0.5,
       stagger: 0.02,
       duration: 1,
-      ease: 'linear',
+      ease: "linear",
     });
-})
-  
+  });
+
   useEffect(() => {
     // Animate markers with stagger
-    
 
     // Animate needles
     const tl = gsap.timeline();
 
     tl.fromTo(
       needle1Ref.current,
-      { rotation: -50, transformOrigin: "bottom center" },
-      { rotation: 120, duration: 30, repeat: -1, ease: "none" },
+      { rotation: 0, transformOrigin: "bottom center" },
+      { rotation: 360, duration: 25, repeat: -1, ease: "none" }
     ).fromTo(
       needle2Ref.current,
-      { rotation: -90, transformOrigin: "bottom center" },
-      { rotation: 120, duration: 6, repeat: -1, ease: "none" },
+      { rotation: -120, transformOrigin: "bottom center" },
+      { rotation: 360, duration: 360, repeat: -1, ease: "none" },
       "<"
     );
   }, []);
@@ -59,7 +58,10 @@ useGSAP(()=>{
   });
 
   return (
-    <div ref={contain} className="flex justify-center items-center h-screen bg-black relative pb-10">
+    <div
+      ref={contain}
+      className="flex justify-center items-center h-screen bg-black relative pb-10"
+    >
       <video
         className="w-full h-full object-cover transition-all duration-500 absolute z-0"
         src="/videos/Homepage.mp4"
@@ -67,14 +69,49 @@ useGSAP(()=>{
         autoPlay
         loop
       ></video>
-      <svg width="1800" height="700" viewBox="0 0 300 150" className="absolute z-2">
+      <svg
+        width="1800"
+        height="700"
+        viewBox="0 60 300 150"
+        className="absolute z-2"
+      >
         {/* Needles */}
-        <line ref={needle2Ref} x1="150" y1="150" x2="150" y2="-80" stroke="white" strokeWidth="0.5" />
-        <line ref={needle1Ref} x1="150" y1="150" x2="150" y2="-80" stroke="white" strokeWidth="0.5" />
+        <line
+          ref={needle2Ref}
+          x1="150"
+          y1="150"
+          x2="150"
+          y2="-80"
+          stroke="white"
+          strokeWidth="0.3"
+        />
+        <line
+          ref={needle1Ref}
+          x1="150"
+          y1="150"
+          x2="150"
+          y2="-80"
+          stroke="white"
+          strokeWidth="0.3"
+        />
       </svg>
-      <div className="absolute flex justify-center flex-col items-center mt-20">
-        <h1 className="text-[13vh] text-white">Time is <span className="text-red-500"> ticking. </span></h1>
-        <h2 className="text-xl text-white">It doesn’t pause. Not for you. Not for me. Not for anyone.</h2>
+      <div className="absolute left-[60%] top-[0] flex justify-start flex-col items-start mt-20 text-4xl font-gilroy-semi">
+        <h1 className="opacity-50">Courses</h1>
+        <h1>
+          From <span className="text-amber-300">Learning</span> to{" "}
+          <span className="text-red-500">Doing</span>
+        </h1>
+        <h1>Learn the skills.</h1>
+        <h1> Build the Life that You Want.</h1>
+      </div>
+      <div className="absolute left-25 top-20">
+        <h1 className="col-center leading-29 font-sans font-bold opacity-65 text-[20vh]">
+          <span>A</span>
+          <span>N</span>
+          <span>K</span>
+          <span>U</span>
+          <span>R</span>
+        </h1>
       </div>
     </div>
   );

@@ -52,12 +52,12 @@ const Hero = () => {
     tl.fromTo(
       TextRef.current,
       { opacity: 0, scale: 2 },
-      { opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" }
+      { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }
     )
       .fromTo(
         ImageRef.current,
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, delay: 2, ease: "power1.out" },
+        { y: 0, opacity: 1, duration: 0.4, delay: 1, ease: "power1.out" },
         "<"
       )
       .fromTo(
@@ -96,7 +96,7 @@ const Hero = () => {
       <img
         src="/images/bg-ankur.webp"
         alt=""
-        className="absolute top-0 left-[-5vh] w-full h-full object-cover scale-200 z-0"
+        className="absolute top-70 left-[-5vh] w-full h-full object-cover opacity-20 scale-200 z-0"
       />
 
       <div className="relative h-screen w-full flex items-center justify-center">
@@ -110,20 +110,24 @@ const Hero = () => {
           ref={ImageRef}
           src="/images/hero-ankur.webp"
           alt=""
-          className="absolute top-0 left-0 w-full h-full scale-100 object-cover z-0"
+          className="absolute top-[-10%] left-0 w-[100%] h-[150%] scale-[0.5] object-cover z-0"
         />
       </div>
 
       <div className="absolute inset-0 h-full w-full z-20 pt-20 px-4 sm:px-10 md:px-20">
-        <div className="flex flex-col justify-evenly h-full gap-10">
+        <div className="flex flex-col justify-evenly h-full gap-10 px-20">
           <div>
             <h1
               onMouseEnter={change}
               onMouseLeave={ret}
               ref={text1}
-              className="text-[7vw] sm:text-[5vw] md:text-[3.5vw] font-gilroy-reg max-w-[90%] sm:max-w-[70%] md:max-w-[50%]"
+              className="text-[7vw] sm:text-[5vw] md:text-[3.5vw] font-gilroy-exBold leading-13 max-w-[90%] sm:max-w-[70%] md:max-w-[50%]"
             >
+              <p className="text-[10px] font-gilroy-reg leading-3 ml-2 w-[50%] pb-2">I will Give You <br /> A life That you dream</p>
+
               Build a life you're <br /> proud of
+              <br />
+              <p className="text-xl font-gilroy-reg py-5 w-[50%]">A Life You cannot imagine. a Whole new Life</p>
             </h1>
           </div>
           <div className="flex justify-end">
@@ -131,7 +135,7 @@ const Hero = () => {
               ref={text2}
               onMouseEnter={change}
               onMouseLeave={ret}
-              className="text-[6vw] sm:text-[4.5vw] md:text-[3vw] font-gilroy-reg text-right max-w-[90%] sm:max-w-[70%] md:max-w-[50%]"
+              className="text-[6vw] sm:text-[4.5vw] md:text-[3vw] font-gilroy-bold text-right leading-10 max-w-[90%] sm:max-w-[70%] md:max-w-[50%]"
             >
               I’m <br /> Ankur Warikoo
             </h1>

@@ -26,7 +26,7 @@ const App = () => {
     <div className="relative cursor-none" onMouseMove={handleMouse}>
       <div
         ref={mouseRef}
-        className="crsr w-[50px] h-[50px] border-8 border-dotted rounded-full fixed z-[999] pointer-events-none"
+        className="crsr w-[50px] h-[50px] border-1 rounded-full fixed z-[999] pointer-events-none"
       ></div>
 
       <Nav />

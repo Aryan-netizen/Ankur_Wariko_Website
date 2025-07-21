@@ -27,11 +27,11 @@ const LifeMeaning = () => {
     });
     tl.from(h2.current, {
       opacity: 0,
-      y: 200,
+      y: 20,
       duration: 0.3,
     }).from(p.current, {
       opacity: 0,
-      y: 200,
+      y: 20,
       duration: 0.3,
     });
   }, []);
@@ -77,14 +77,14 @@ const LifeMeaning = () => {
       ></video>
       <h2
         ref={h2}
-        className="absolute z-40 left-4 top-1/3 md:left-20 text-3xl md:text-5xl font-gilroy-bold leading-snug"
+        className="absolute z-40 left-4 opacity-90 top-1/3 md:left-20 text-3xl md:text-5xl font-gilroy-bold leading-snug"
       >
         Life is Too Short to <br />
         live Completely
       </h2>
       <p
         ref={p}
-        className="absolute z-40 left-4 top-[60%] md:left-20 text-lg md:text-2xl w-[90%] md:w-[60%] font-gilroy-semi"
+        className="absolute z-40 left-4 opacity-70 top-[60%] md:left-20 text-lg md:text-2xl w-[90%] md:w-[60%] font-gilroy-semi"
       >
         “I used to feel like I had no time. Now, I teach people how to build
         lives where time works for them — not against them. This course is
@@ -95,7 +95,7 @@ const LifeMeaning = () => {
         onMouseEnter={enter}
         onMouseLeave={leave}
         onClick={clicked}
-        className="absolute z-40 left-4 top-[80%] md:left-20 w-[80%] md:w-[30%] text-base md:text-2xl py-3 px-6 font-gilroy-semi button"
+        className="absolute z-40 left-4 top-[80%] opacity-90 md:left-20 w-[80%] md:w-[30%] text-base md:text-2xl py-3 px-6 font-gilroy-semi button"
       >
         Explore courses Now
       </button>

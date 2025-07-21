@@ -2,10 +2,12 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Card = ({data }) => {
+    const navigate = useNavigate()
     const card=useRef()
     const h1=useRef()
     const button=useRef()
@@ -54,10 +56,13 @@ const Card = ({data }) => {
                 duration:0.1,
                 y:-2,
             })
+    }
+    const click = ()=>{
+        navigate("/courses/0")
 
     }
   return (
-      <div ref={card} onMouseEnter={enter} onMouseLeave={leave} className="w-[27vw] h-[65vh] relative overflow-hidden text-black">
+      <div ref={card} onClick={click} onMouseEnter={enter} onMouseLeave={leave} className="w-[27vw] h-[65vh] relative overflow-hidden text-black">
         <img
           src={data.img}
           alt=""

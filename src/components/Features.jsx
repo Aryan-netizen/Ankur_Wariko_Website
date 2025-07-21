@@ -65,7 +65,7 @@ const Features = () => {
     >
       <video
         ref={video}
-        className="w-full h-full object-cover opacity-60 transition-all duration-500"
+        className="w-full h-full object-cover opacity-60 transition-all  duration-500"
         src="/videos/ankur4.mp4"
         onMouseEnter={enter}
         onMouseLeave={leave}
