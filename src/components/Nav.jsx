@@ -37,7 +37,7 @@ const Nav = () => {
     <>
       <div
         ref={navref}
-        className="flex justify-end gap-8 p-5 text-2xl w-full fixed z-20 glass-card px-20"
+        className="flex justify-center gap-8 p-5 text-xl w-full fixed z-20 glass-card px-20"
       >
         <Link to="/">
           <h1 onMouseEnter={enter} onMouseLeave={leave}>

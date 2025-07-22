@@ -84,7 +84,7 @@ main {
 .glass-card {
   backdrop-filter: blur(13px);
   -webkit-backdrop-filter: blur(13px);
-  background-color: #ffffff9c;
+  background-color: #1a2c249c;
   box-shadow: 0 4px 8.100000000000001px rgba(0, 0, 0, 0.135);
 }
 
@@ -92,6 +92,11 @@ main {
 .crsr.invert {
   border-color: white;
   mix-blend-mode: difference;
+}
+
+.dir{
+  writing-mode: vertical-lr;
+  scale:-1
 }
 
 

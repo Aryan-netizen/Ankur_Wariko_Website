@@ -75,19 +75,19 @@ const Features = () => {
       ></video>
       <h1
         ref={h1}
-        className="absolute z-40 left-6 top-1/4 md:left-20 md:text-5xl text-3xl font-gilroy-semi"
+        className="absolute z-40 left-[12%] top-[65%] md:text-5xl text-3xl font-gilroy-semi "
       >
-        about Us.
+        About Us.
       </h1>
       <h2
         ref={h2}
-        className="absolute z-40 left-6 top-[60%] md:left-20 md:text-5xl text-2xl font-gilroy-bold"
+        className="absolute z-40 left-6 top-[21%] md:left-20 text-7xl font-gilroy-bold dir scale-[-1]"
       >
         Ankur Wariko
       </h2>
       <p
         ref={p}
-        className="absolute z-40 left-6 top-[75%] md:left-20 text-lg md:text-2xl w-[90%] md:w-[60%] font-gilroy-semi"
+        className="absolute z-40 left-[12%] top-[75%] text-lg md:text-2xl w-[90%] md:w-[60%] font-gilroy-semi"
       >
         I’m Ankur Warikoo — entrepreneur, author, and mentor to millions.
         Through my books, courses, and content, I help you take control of your

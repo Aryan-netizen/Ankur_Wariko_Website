@@ -14,12 +14,9 @@ const Card = ({data }) => {
     const p=useRef()
     const img=useRef()
     useGSAP(()=>{
-        gsap.set([p.current,button.current],{
-            opacity:0,
-            y:0,
-        })
+
         gsap.to(img.current,{
-            scale:2,
+            scale:1.05,
             repeat:-1,
             yoyo:true,
             duration:70,
@@ -28,16 +25,8 @@ const Card = ({data }) => {
     const enter = ()=>{
             const tl = gsap.timeline()
             tl.to(card.current,{
-                scale:1.1,
+                scale:1.05,
                 duration:0.2,
-            }).to(p.current,{
-                opacity:1,
-                duration:0.1,
-                y:-2,
-            }).to(button.current,{
-                opacity:1,
-                duration:0.1,
-                y:-2,
             })
 
     }
@@ -47,14 +36,6 @@ const Card = ({data }) => {
             tl.to(card.current,{
                 scale:1,
                 duration:0.2,
-            }).to(p.current,{
-                opacity:0,
-                duration:0.1,
-                y:-2,
-            }).to(button.current,{
-                opacity:0,
-                duration:0.1,
-                y:-2,
             })
     }
     const click = ()=>{
@@ -62,18 +43,17 @@ const Card = ({data }) => {
 
     }
   return (
-      <div ref={card} onClick={click} onMouseEnter={enter} onMouseLeave={leave} className="w-[27vw] h-[65vh] relative overflow-hidden text-black">
+      <div ref={card} onClick={click} onMouseEnter={enter} onMouseLeave={leave} className="w-[25vw] h-[70vh] relative overflow-hidden shadow-white rounded-xl">
         <img
           src={data.img}
           alt=""
           ref={img}
-          className=" object-cover absolute z-0 top-0 left-0 w-full h-full"
+          className=" object-cover opacity-85 w-full h-[55%]"
         />
-        <h1 ref={h1} className="text-4xl glass-card font-gilroy-bold absolute z-10 p-2 top-0 left-0">{data.h1}</h1>
-        <p ref={p} className="p-2 absolute z-10 line-clamp-3 glass-card text-2xl top-60 left-0">
-          {data.p}
-        </p>
-        <button ref={button} className="px-2 py-1 mt-8 mx-4 absolute text-2xl z-10 top-85 left-0 bg-amber-300 border rounded border-amber-50">Explore more</button>
+        <h1 ref={h1} className="text-lg font-gilroy-reg  uppercase mt-4 mx-2 opacity-60">{data.h1}</h1>
+        <p ref={p} className="text-md font-gilroy-reg p-2 uppercase mt-2 line-clamp-3 ">{data.p}</p>
+        
+        <button ref={button} className="px-8 mx-10 mt-8 py-3 w-[80%] text-md bg-amber-400 text-black font-gilroy-bold rounded-full">Explore more</button>
       </div>
   );
 };

@@ -14,7 +14,7 @@ const Courses = () => {
         {/* <section className="h-[200vh]">
             <Motivation/>
         </section> */}
-        <section className="h[400vh]">
+        <section className="h-[250vh]">
             <CoursesCard/>
             {/* <Card/> */}
         </section>

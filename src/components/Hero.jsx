@@ -110,20 +110,20 @@ const Hero = () => {
           ref={ImageRef}
           src="/images/hero-ankur.webp"
           alt=""
-          className="absolute top-[-10%] left-0 w-[100%] h-[150%] scale-[0.5] object-cover z-0"
+          className="absolute top-[-10%] left-0 w-[100%] h-[150%] scale-[0.6] object-cover z-0"
         />
       </div>
 
-      <div className="absolute inset-0 h-full w-full z-20 pt-20 px-4 sm:px-10 md:px-20">
+      <div className="absolute inset-0 h-full w-full z-20 pt-20 px-4 sm:px-10 md:px-20 ">
         <div className="flex flex-col justify-evenly h-full gap-10 px-20">
           <div>
             <h1
               onMouseEnter={change}
               onMouseLeave={ret}
               ref={text1}
-              className="text-[7vw] sm:text-[5vw] md:text-[3.5vw] font-gilroy-exBold leading-13 max-w-[90%] sm:max-w-[70%] md:max-w-[50%]"
+              className="text-[7vw] sm:text-[5vw] md:text-[3.5vw] font-gilroy-exBold capitalize leading-13 max-w-[90%] sm:max-w-[70%] md:max-w-[50%]"
             >
-              <p className="text-[10px] font-gilroy-reg leading-3 ml-2 w-[50%] pb-2">I will Give You <br /> A life That you dream</p>
+              <p className="text-[10px] font-gilroy-reg leading-3  w-[5%] pb-2 dir">I will Give You <br /> A life That you dream</p>
 
               Build a life you're <br /> proud of
               <br />

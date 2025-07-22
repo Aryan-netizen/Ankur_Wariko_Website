@@ -58,10 +58,9 @@ const LifeMeaning = () => {
     });
     setCursorSpeed(1);
   };
-  const clicked = ()=>{
-    flashNavigate("/courses")
-
-  }
+  const clicked = () => {
+    flashNavigate("/courses");
+  };
   return (
     <div
       ref={container2}
@@ -77,28 +76,27 @@ const LifeMeaning = () => {
       ></video>
       <h2
         ref={h2}
-        className="absolute z-40 left-4 opacity-90 top-1/3 md:left-20 text-3xl md:text-5xl font-gilroy-bold leading-snug"
+        className="absolute z-40 left-4 opacity-90 top-1/3 md:left-20 text-3xl md:text-5xl font-gilroy-bold leading-12"
       >
         Life is Too Short to <br />
         live Completely
       </h2>
       <p
         ref={p}
-        className="absolute z-40 left-4 opacity-70 top-[60%] md:left-20 text-lg md:text-2xl w-[90%] md:w-[60%] font-gilroy-semi"
+        className="absolute z-40 left-4 opacity-70 top-[52%] md:left-20 text-lg md:text-2xl w-[90%] md:w-[60%] font-gilroy-semi"
       >
         “I used to feel like I had no time. Now, I teach people how to build
         lives where time works for them — not against them. This course is
         everything I’ve learned through real struggle.”
       </p>
       <button
-        ref={button}
-        onMouseEnter={enter}
-        onMouseLeave={leave}
         onClick={clicked}
-        className="absolute z-40 left-4 top-[80%] opacity-90 md:left-20 w-[80%] md:w-[30%] text-base md:text-2xl py-3 px-6 font-gilroy-semi button"
+        ref={button}
+        className="px-8 py-4 absolute z-40 left-[5%] top-[70%] text-2xl bg-amber-400 text-black font-gilroy-bold rounded-full"
       >
-        Explore courses Now
+        Explore more
       </button>
+
       {flash}
     </div>
   );

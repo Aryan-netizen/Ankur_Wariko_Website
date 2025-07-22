@@ -23,7 +23,18 @@ const HalfClock = () => {
 
     // Animate needles
     const tl = gsap.timeline();
+    
 
+    tl.fromTo(
+      needle1Ref.current,
+      { rotation: -630, transformOrigin: "bottom center" },
+      { rotation: 0, duration: 2, ease:'power3.inOut' }
+    ).fromTo(
+      needle2Ref.current,
+      { rotation: -610, transformOrigin: "bottom center" },
+      { rotation: -120, duration: 2, ease:'power3.inOut' },
+      "<"
+    )
     tl.fromTo(
       needle1Ref.current,
       { rotation: 0, transformOrigin: "bottom center" },
@@ -31,7 +42,7 @@ const HalfClock = () => {
     ).fromTo(
       needle2Ref.current,
       { rotation: -120, transformOrigin: "bottom center" },
-      { rotation: 360, duration: 360, repeat: -1, ease: "none" },
+      { rotation: 360, duration: 300, repeat: -1, ease: "none" },
       "<"
     );
   }, []);
@@ -105,12 +116,8 @@ const HalfClock = () => {
         <h1> Build the Life that You Want.</h1>
       </div>
       <div className="absolute left-25 top-20">
-        <h1 className="col-center leading-29 font-sans font-bold opacity-65 text-[20vh]">
-          <span>A</span>
-          <span>N</span>
-          <span>K</span>
-          <span>U</span>
-          <span>R</span>
+        <h1 className="col-center leading-29 font-sans font-bold opacity-65 text-[20vh] dir">
+          ANKUR
         </h1>
       </div>
     </div>
