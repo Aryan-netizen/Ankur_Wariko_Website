@@ -48,6 +48,10 @@ body {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   background: linear-gradient(
     223.17deg,
@@ -114,7 +118,6 @@ li::before {
   background-color: rgb(226, 226, 226);
   border-radius: 50%;
   width: 24px;
-
 }
 
 
