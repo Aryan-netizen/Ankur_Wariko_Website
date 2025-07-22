@@ -98,5 +98,23 @@ main {
   writing-mode: vertical-lr;
   scale:-1
 }
+li {
+  position: relative;
+  padding-left: 1.5em; /* creates space for the checkmark */
+  list-style: none; 
+  margin-top: 15px; 
+  margin-left: 20px;  /* removes default bullet */
+}
+li::before {
+  content: "✔️";
+  position: absolute;
+  left: -2%;
+  top: 0;
+  font-size: 1em;
+  background-color: rgb(226, 226, 226);
+  border-radius: 50%;
+  width: 24px;
+
+}
 
 

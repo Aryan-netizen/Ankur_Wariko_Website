@@ -22,7 +22,6 @@ const LifeMeaning = () => {
         trigger: container2.current,
         start: "top 20%",
         end: "+=10",
-        markers: true,
       },
     });
     tl.from(h2.current, {

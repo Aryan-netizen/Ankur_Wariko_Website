@@ -38,7 +38,6 @@ const Hero = () => {
             scrub: true,
             pin: true,
             pinSpacing: false,
-            markers: false,
             snap: 0.1,
           },
         }).to(containerRef.current, {
