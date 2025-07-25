@@ -55,6 +55,12 @@ const LifeMeaning = () => {
     });
     setCursorSpeed(1);
   };
+
+   function convertToEmbedUrl(youtubeUrl) {
+    const videoId = youtubeUrl.split("v=")[1];
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&rel=0&showinfo=0&modestbranding=1`;
+  }
+
   const clicked = () => {
     navigate("/courses");
   };
@@ -63,14 +69,17 @@ const LifeMeaning = () => {
       ref={container2}
       className=" h-screen w-full bg-black overflow-hidden relative"
     >
-      <video
-        ref={video}
-        className="w-full h-full object-cover transition-all duration-500"
-        src="/videos/Homepage.mp4"
-        muted
-        autoPlay
-        loop
-      ></video>
+      <div className="w-[100vw] h-[100vh] mx-auto mt-10 relative">
+        <iframe
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-60 transition-all duration-500"
+          src={convertToEmbedUrl("https://www.youtube.com/watch?v=SgEQrUIKJ6Y")}
+
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        <div className="w-full h-full bg-transparent absolute top-0 left-0"></div>
+      </div>
       <h2
         ref={h2}
         className="absolute z-40 left-4 opacity-90 top-1/3 md:left-20 text-3xl md:text-5xl font-gilroy-bold leading-12"

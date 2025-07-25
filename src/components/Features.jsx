@@ -35,20 +35,27 @@ const Features = () => {
         duration: 0.3,
       });
   }, []);
+  function convertToEmbedUrl(youtubeUrl) {
+    const videoId = youtubeUrl.split("v=")[1];
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&rel=0&showinfo=0&modestbranding=1`;
+  }
 
   return (
     <div
       ref={container2}
       className=" h-screen w-full bg-black overflow-hidden relative"
     >
-      <video
-        ref={video}
-        className="w-full h-full object-cover opacity-60 transition-all scale-[0.7]  duration-500"
-        src="/videos/ankur4.mp4"
-        muted
-        autoPlay
-        loop
-      ></video>
+      <div className="w-[90vw] h-[90vh] mx-auto mt-10 relative">
+        <iframe
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-60 transition-all duration-500"
+          src={convertToEmbedUrl("https://www.youtube.com/watch?v=bGgGp72D_OI")}
+
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        <div className="w-full h-full bg-transparent absolute top-0 left-0"></div>
+      </div>
       <h1
         ref={h1}
         className="absolute z-40 left-[17%] top-[65%] md:text-5xl text-3xl font-gilroy-semi "

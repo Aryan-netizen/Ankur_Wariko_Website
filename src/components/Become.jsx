@@ -15,7 +15,6 @@ const Become = () => {
         start: "top 70%",
         end: "+=500",
         scrub: true,
-        markers: true,
       },
     });
     tl.from(text1.current, {
