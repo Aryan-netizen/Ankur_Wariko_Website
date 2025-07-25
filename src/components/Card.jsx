@@ -44,7 +44,7 @@ const Card = ({data }) => {
 
     }
   return (
-      <div ref={card} onClick={click} onMouseEnter={enter} onMouseLeave={leave} className="w-[25vw] h-[70vh] relative overflow-hidden shadow-white rounded-xl">
+      <div ref={card} onClick={click} onMouseEnter={enter} onMouseLeave={leave} className="w-[25vw] h-[75vh] relative overflow-hidden bg-white/10 backdrop-blur-md shadow-white rounded-xl">
         <img
           src={data.img}
           alt=""

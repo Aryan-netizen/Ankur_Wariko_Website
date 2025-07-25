@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useCourses } from "../context/CoursesProvider";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -6,6 +6,7 @@ import gsap from "gsap";
 const Course_Detail = () => {
   const { id } = useParams();
   const { courses } = useCourses();
+  const navigate =useNavigate()
 
   const course = courses.find((c) => String(c.id) === id);
 
@@ -62,6 +63,9 @@ const Course_Detail = () => {
     const videoId = youtubeUrl.split("v=")[1];
     return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&rel=0&showinfo=0&modestbranding=1`;
   }
+  function clicked(){
+    navigate('/login')
+  }
 
   return (
     <div className="min-h-screen w-full overflow-hidden pt-20 px-10">
@@ -107,7 +111,9 @@ const Course_Detail = () => {
               </li>
             ))}
           </ul>
-          <button className="px-8 py-4 mt-8 ml-4 text-xl bg-amber-400 text-black font-gilroy-bold rounded-xl hover:scale-105 transition-transform duration-300">
+          <button 
+          onClick={clicked}
+          className="px-8 py-4 mt-8 ml-4 text-xl bg-amber-400 text-black font-gilroy-bold rounded-xl hover:scale-105 transition-transform duration-300">
             Enroll Now ➜
           </button>
         </div>

@@ -47,17 +47,12 @@ const Nav = () => {
             Courses
           </h1>
         </Link>
-        <Link to="/">
-          <h1 onMouseEnter={enter} onMouseLeave={leave}>
-            Books
-          </h1>
-        </Link>
-        <Link to="/">
+        <Link to="/about">
           <h1 onMouseEnter={enter} onMouseLeave={leave}>
             About
           </h1>
         </Link>
-        <Link to="/">
+        <Link to="/login">
           <h1 onMouseEnter={enter} onMouseLeave={leave}>
             Login
           </h1>
