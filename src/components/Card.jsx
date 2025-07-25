@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Card = ({data }) => {
     const navigate = useNavigate()
+    
     const card=useRef()
     const h1=useRef()
     const button=useRef()
@@ -39,7 +40,7 @@ const Card = ({data }) => {
             })
     }
     const click = ()=>{
-        navigate("/courses/0")
+        navigate(`/courses/${data.id}`)
 
     }
   return (

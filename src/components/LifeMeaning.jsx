@@ -4,12 +4,10 @@ import React, { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useCursor } from "../context/CursorContext";
 import { useNavigate } from "react-router-dom";
-import { useFlashNavigate } from "./flash/useFlashNavigate";
 gsap.registerPlugin(ScrollTrigger);
 
 const LifeMeaning = () => {
   const { mouseRef, setCursorSpeed } = useCursor();
-  const [flashNavigate, flash] = useFlashNavigate();
   const container2 = useRef();
   const video = useRef();
   const h2 = useRef();
@@ -58,7 +56,7 @@ const LifeMeaning = () => {
     setCursorSpeed(1);
   };
   const clicked = () => {
-    flashNavigate("/courses");
+    navigate("/courses");
   };
   return (
     <div
@@ -96,7 +94,6 @@ const LifeMeaning = () => {
         Explore more
       </button>
 
-      {flash}
     </div>
   );
 };

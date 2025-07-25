@@ -3,11 +3,9 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 import { useCursor } from "../context/CursorContext";
 import { Link, Outlet } from "react-router-dom";
-import { useFlashNavigate } from "./flash/useFlashNavigate";
 
 const Nav = () => {
   const { mouseRef, setCursorSpeed } = useCursor();
-  const [flashNavigate, flash] = useFlashNavigate();
 
   const navref = useRef();
   useGSAP(() => {
